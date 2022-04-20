@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Importar transações</title>
+
+    <link rel="stylesheet" href="{% static 'upload.css' %}">
+
+</head>
+<body>
+    <h1>Importar transações</h1>
+
+    <form>
+        {% csrf_token %}
+        <input class="arquivo" type="file" id="arquivo" accept=".csv" formmethod="POST" enctype="multipart/form-data/" action="/foo/"><br>
+        <label for="arquivo">Selecione o arquivo para realizar o upload</label><br>
+        <input type="submit" value="importar" class="importar"/>
+    </form>
+
+
+    <div>
+        {{ form }}
+    </div>
+
+
+
+</body>
+</html>
